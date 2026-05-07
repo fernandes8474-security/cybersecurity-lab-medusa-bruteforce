@@ -9,7 +9,7 @@ Durante a execução, enfrentei limitações de hardware que exigiram adaptaçõ
 *   **Manipulação de Wordlists:** Devido a incompatibilidades de layout de teclado no terminal do Kali, utilizei comandos como `printf` e `cat` para criar wordlists personalizadas manualmente, garantindo a precisão da sintaxe necessária para o Medusa.
 *   **Fluxo de Trabalho Híbrido:** Para poupar memória, utilizei o navegador do sistema anfitrião (Windows) para configurar o laboratório web (DVWA), realizando o ataque estritamente via terminal no Kali. Também utilizei um servidor HTTP via Python3 para transferir as capturas de tela do Kali para o Windows via rede local, permitindo o upload final para o GitHub.
 
-*   ## 🛠️ Metodologia de Transferência de Dados
+## 🛠️ Metodologia de Transferência de Dados
 Devido à instabilidade do ambiente gráfico da máquina virtual e à falha nas ferramentas nativas de "arrastar e largar", implementei uma solução de rede para exportar as evidências (prints):
 
 1.  **Servidor HTTP Local:** No terminal do Kali, dentro da pasta de imagens, executei `python3 -m http.server 9000` para transformar a pasta num servidor web temporário.
