@@ -15,24 +15,24 @@ Durante a execução, enfrentei limitações de hardware que exigiram adaptaçõ
 Realizei a enumeração de serviços para identificar portas abertas e versões de protocolos no alvo:
 - **Comando:** `nmap -sV [IP_ALVO]`
 - **Resultado:** Portas 21 (FTP), 445 (SMB) e 80 (HTTP) identificadas como abertas.
-> *[Inserir aqui o print: nmap_result.png]*
+> ![Resultado Nmap](nmap-result.png)
 
 ### 2. Força Bruta em FTP
 Simulação de quebra de autenticação no protocolo de transferência de ficheiros:
 - **Ferramenta:** Medusa
 - **Comando:** `medusa -h [IP] -U users.txt -P passwords.txt -M ftp`
-> ![Sucesso FTP](images/sucesso_ftp.png)
+> ![Sucesso FTP](sucesso-ftp.png)
 
 ### 3. Password Spraying e Enumeração em SMB
 Realizei a enumeração de utilizadores e o ataque de "borrifagem" de senhas contra o serviço de partilha de ficheiros:
 - **Comando:** `medusa -h [IP] -U users.txt -P passwords.txt -M smbnt`
-> ![Sucesso SMB](images/sucesso_smb.png)
+> ![Sucesso SMB](sucesso-smb.png)
 
 ### 4. Ataque Web (DVWA)
 Exploração de formulário de login vulnerável em nível de aplicação:
 - **Configuração:** Segurança do DVWA definida como "LOW".
 - **Comando:** `medusa -h [IP] -u admin -P passwords.txt -M http -m FORM:vulnerabilities/brute/index.php:GET`
-> ![Sucesso Web](images/sucesso_web.png)
+> ![Sucesso Web](sucesso-web.png)
 
 ## 🛡️ Medidas de Prevenção (O que aprendi)
 Para evitar o sucesso destes ataques em ambientes reais, as defesas principais são:
