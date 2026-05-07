@@ -7,7 +7,15 @@ Este projeto foi desenvolvido para o desafio prático da **DIO**, focado em simu
 Durante a execução, enfrentei limitações de hardware que exigiram adaptações estratégicas para concluir o projeto com sucesso:
 *   **Gestão de Recursos (RAM):** Otimizei o ambiente configurando o Metasploitable 2 com apenas 256MB e o Kali Linux com 1GB, utilizando o modo "Headless" e minimizando janelas para evitar travamentos.
 *   **Manipulação de Wordlists:** Devido a incompatibilidades de layout de teclado no terminal do Kali, utilizei comandos como `printf` e `cat` para criar wordlists personalizadas manualmente, garantindo a precisão da sintaxe necessária para o Medusa.
-*   **Fluxo de Trabalho Híbrido:** Para poupar memória, utilizei o navegador do sistema anfitrião (Windows) para configurar o laboratório web (DVWA), realizando o ataque estritamente via terminal no Kali.
+*   **Fluxo de Trabalho Híbrido:** Para poupar memória, utilizei o navegador do sistema anfitrião (Windows) para configurar o laboratório web (DVWA), realizando o ataque estritamente via terminal no Kali. Também utilizei um servidor HTTP via Python3 para transferir as capturas de tela do Kali para o Windows via rede local, permitindo o upload final para o GitHub.
+
+*   ## 🛠️ Metodologia de Transferência de Dados
+Devido à instabilidade do ambiente gráfico da máquina virtual e à falha nas ferramentas nativas de "arrastar e largar", implementei uma solução de rede para exportar as evidências (prints):
+
+1.  **Servidor HTTP Local:** No terminal do Kali, dentro da pasta de imagens, executei `python3 -m http.server 9000` para transformar a pasta num servidor web temporário.
+2.  **Interconexão de Rede:** Configurei a VM em modo **Host-Only**, estabelecendo uma comunicação direta entre o Windows e o Kali.
+3.  **Extração de Evidências:** Acedi ao IP da VM através do navegador **Google Chrome no Windows**, permitindo o download estável dos ficheiros para o upload final no GitHub.
+
 
 ## 🔍 Desenvolvimento do Laboratório
 
