@@ -15,7 +15,7 @@ Durante a execução, enfrentei limitações de hardware que exigiram adaptaçõ
 Realizei a enumeração de serviços para identificar portas abertas e versões de protocolos no alvo:
 - **Comando:** `nmap -sV [IP_ALVO]`
 - **Resultado:** Portas 21 (FTP), 445 (SMB) e 80 (HTTP) identificadas como abertas.
-> ![Resultado Nmap](nmap-result.png)
+> ![Resultado Nmap](nmap-result.png.png)
 
 ### 2. Força Bruta em FTP
 Simulação de quebra de autenticação no protocolo de transferência de ficheiros:
